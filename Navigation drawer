@@ -1,0 +1,66 @@
+import 'package:flutter/material.dart';
+
+void main() => runApp(MyApp());
+
+class Marvlight extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Simplified Navigation Drawer',
+        theme: ThemeData(primaryColor: Colors.purple),
+        home: Scaffold(
+          backgroundColor: Colors.grey[200],
+          appBar: AppBar(
+          centerTitle: true, 
+          title: Text('Simplified Navigation Drawer'),
+          ),
+           drawer: Drawer(
+             child: ListView(
+               padding: const EdgeInsets.only(top: 30.0, bottom: 10.0),
+               children: <Widget>[
+               DrawerHeader(
+                 child: Container(),
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                    fit: BoxFit.contain,
+                    image: AssetImage('assets/images/marv.png') // configured in the Assets folder in the pubspec.yaml file
+                    ),  
+                   ),
+                 ),
+                 ListTile(
+                   leading: Icon(Icons.verified_user, size: 16.0),
+                   title: Text('Find a Tutor', style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold, fontFamily: 'Roboto')),
+                   onTap: () {Navigator.pushNamed(context, '/Parent Req. Form');},
+              ),
+                  ListTile(
+                 leading: Icon(Icons.verified_user, size: 16.0),
+                 title: Text('Find a Researcher', style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold, fontFamily: 'Roboto')),
+                onTap: () {Navigator.pushNamed(context, '/Parent Req. Form');},
+              ),
+                  ListTile(
+                 leading: Icon(Icons.border_color, size: 16.0),
+                 title: Text('Become a Tutor', style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold, fontFamily: 'Roboto')),
+                 onTap: () {Navigator.pushNamed(context, '/Tutor Form');},
+              ),
+                  ListTile(
+                leading: Icon(Icons.library_books, size: 16.0),
+                title: Text('Become a Researcher', style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold, fontFamily: 'Roboto')),
+                onTap: () {Navigator.pushNamed(context, '/Researcher Form');},
+              ),
+              ListTile(
+              leading: Icon(Icons.settings, size: 16.0),
+              title: Text('Settings', style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold, fontFamily: 'Roboto')),
+              onTap: () {Navigator.pushNamed(context, '/Settings');},
+              ),
+               ]
+             ),
+            ),
+           ),
+          ),
+        );
+      }
+     }
+
+
+
